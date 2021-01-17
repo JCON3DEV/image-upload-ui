@@ -1,6 +1,6 @@
 import React from 'react'
-import "react-dropzone-uploader/dist/styles.css";
 import Dropzone from "react-dropzone-uploader";
+import "react-dropzone-uploader/dist/styles.css";
 
 function MyUploader({ fetchUploads }) {
   // specify upload params and url for your files
@@ -12,22 +12,24 @@ function MyUploader({ fetchUploads }) {
 
   // receives array of files that are done uploading when submit button is clicked
   const handleSubmit = (files, allFiles) => {
-    console.log(files.map((f) => f.files));
-    allFiles.forEach((file) => file.remove());
+    // console.log(files.map((f) => f.files));
+    allFiles.forEach((file) => file.remove())
     fetchUploads();
   };
 
   return (
-    <Dropzone
-      getUploadParams={getUploadParams}
-      onSubmit={handleSubmit}
-      accept="image/*"
-      maxFiles={1}
-      multiple={false}
-      styles={{
-        dropzone: { minHeight: 200, maxHeight: 250 },
-      }}
-    />
+    <div>
+      <Dropzone
+        getUploadParams={getUploadParams}
+        onSubmit={handleSubmit}
+        accept="image/*"
+        maxFiles={1}
+        multiple={false}
+        styles={{
+          dropzone: { minHeight: 200, maxHeight: 250 },
+        }}
+      />
+    </div>
   );
 };
 export default MyUploader;
