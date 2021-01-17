@@ -4,7 +4,9 @@ import Dropzone from "react-dropzone-uploader";
 
 function MyUploader({ fetchUploads }) {
   // specify upload params and url for your files
-  const getUploadParams = ({ meta }) => {
+  const getUploadParams = ({ file }) => {
+    const body = new FormData();
+    body.append("image", file);
     return { url: "http://localhost:8000/api/uploads", body };
   };
 
