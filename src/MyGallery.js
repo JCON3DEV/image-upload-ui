@@ -18,7 +18,7 @@ const images = [
 ];
 
 function MyGallery({images}){
-    return <ImageGallery items={images} />;
+  return <ImageGallery items={images} />;
 }
 
 export default MyGallery;
