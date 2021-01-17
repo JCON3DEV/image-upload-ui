@@ -30,13 +30,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {/* <MyGallery />
-        <MyUploader /> */}
-        <div>
-          <MyUploader fetchUploads={fetchUploads} />
+        <div className="container">
+          <div className="upload-container">
+            <MyUploader fetchUploads={fetchUploads} />
+          </div>
         </div>
-        <div className="gallery-container">
-          {images && images.length ? <MyGallery images={images} /> : null}
+        <div className="container">
+          <div className="gallery-container">
+            {images && images.length ? <MyGallery images={images} /> : null}
+          </div>
         </div>
       </header>
     </div>
